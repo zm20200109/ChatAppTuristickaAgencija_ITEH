@@ -1,0 +1,122 @@
+<!--
+<div *ngIf="userData">  
+    <p>Welcome, {{ userData.name }} !</p>
+    <p>Let's travel with us!</p>
+  </div>
+-->
+
+<div class="basic_user"   *ngIf="userRole === 'user'">
+
+<div class="back">
+
+
+<div class="container1">
+    <div class="message">
+      <img src="../../assets/images/user.png" alt="User Icon">
+      <div>
+        <p>Welcome, <span style="font-weight: bold;">{{ userData.name }}</span>!</p>
+      </div>
+    </div>
+    <p style="font-weight: bold; font-size: 14px; margin-top: 10px;"><b>Let's travel with us.</b></p>
+    <button (click)="logout()">logout</button>
+  </div>
+  
+
+  <!--OVDE CES DA NAPRAVIS TABELU SA ARANZMANIMA KOJI SU REZERVISANI-->
+  <div class="container">
+    <table>
+        <thead>
+            <tr>
+            <th>DESTINACIJA</th>
+            <th>DATUM</th>
+            <th>PREVOZ</th>
+            <th>CENA</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let putovanje of userAranzmani">
+            <td><span>{{ putovanje.aranzman.destinacija }}</span></td>
+            <td><span>{{ putovanje.aranzman.datum }}</span></td>
+            <td><span>{{ putovanje.aranzman.prevoz }}</span></td>
+            <td><span>{{ putovanje.aranzman.cena }}</span></td>
+            <td><span><button  (click)="onButtonOtkazi(putovanje)">otkazi</button></span></td>
+
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+  
+ 
+  
+
+
+
+
+<!--HOCU DA OVDE PREBACIS ONU REZERVISI RUTU IZ KOMPONENETE PROFILE  TJ. -->
+<div class="mess">
+    <p> Da li želite da rezervišete? </p>
+</div>
+
+
+
+<div class="container3">
+
+
+
+    <div  class="card" 
+    [ngStyle]="{border: '1px solid blue'}"
+     *ngFor="let aranzmanL of localAranzmani"
+    
+    >
+        <div class="image">
+        <img src=" {{ aranzmanL.picture  }} " 
+        alt="Slika"
+        width="90%"
+        height="90%"
+        class="card-image"
+        >
+        </div>
+        <h1>{{ aranzmanL.destinacija  }}</h1>
+        <p>{{ aranzmanL.cena }} euro</p>
+     <!--   <p>Broj mesta: {{ aranzman.br_mesta }}</p> -->
+        <p>Datum: {{ aranzmanL.datum }}</p>
+        <p>Prevoz: {{  aranzmanL.prevoz }}</p>
+        <p>
+        <span>Slobodno mesta: {{ aranzmanL.br_mesta }} </span>
+        <button  
+        [ngClass]="{'classButtonClick' :buttonClick}"
+        (click)="rezervisi(aranzmanL)"
+        
+        
+        > rezervisi </button>
+    
+       <button  
+        [ngClass]="{'classButtonClick' :buttonClick}"
+        (click)="onRemoveFromCart(aranzmanL)"
+        
+        
+        > otkazi </button>
+    
+    
+    
+        </p>
+    </div>
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+</div>
+
+
+<div class="admin_user"   *ngIf="userRole === 'admin'">
+  <app-admin-profile></app-admin-profile>
+</div>

@@ -1,0 +1,146 @@
+<div class="back">
+<div class="card-container">
+
+<div  class="card" 
+[ngStyle]="{border: '1px solid blue'}"
+ *ngFor="let aranzman of paginatedAranzmani"
+
+>
+    <div class="image">
+    <img src=" {{ aranzman.picture  }} " 
+    alt="Slika"
+    width="90%"
+    height="90%"
+    class="card-image"
+    >
+    </div>
+    <h1>{{ aranzman.destinacija  }}</h1>
+    <p>{{ aranzman.cena }} euro</p>
+ <!--   <p>Broj mesta: {{ aranzman.br_mesta }}</p> -->
+    <p>Datum: {{ aranzman.datum }}</p>
+    <p>Prevoz: {{  aranzman.prevoz }}</p>
+    <p>
+    <span>Slobodno mesta: {{ aranzman.br_mesta }} </span>
+    <button  
+    [ngClass]="{'classButtonClick' :buttonClick}"
+    (click)="onAddToCart(aranzman)"
+    
+    
+    > rezervisi </button>
+
+<!--    <button  
+    [ngClass]="{'classButtonClick' :buttonClick}"
+    (click)="onRemoveFromCart(aranzman)"
+    
+    
+    > otkazi </button>
+    -->
+
+
+    </p>
+</div>
+
+</div>
+<div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 0">Prethodna stranica</button>
+    <span>Stranica {{ currentPage + 1 }} od {{ getTotalPages()  }}</span>
+    <button (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize >= aranzmani.length">Sledeća stranica</button>
+  </div>
+
+
+  <form (ngSubmit)="applyFilters()" #filterForm="ngForm">
+    <div class="filter-group">
+      <label for="destination">Destinacija:</label>
+      <input type="text" id="destination" name="destination" [(ngModel)]="filters.destination">
+    </div>
+  
+    <div class="filter-group">
+      <label for="price">Cena:</label>
+      <input type="number" id="price" name="price" [(ngModel)]="filters.price">
+    </div>
+  
+    <div class="filter-group">
+      <label for="date">Datum od:</label>
+      <input type="date" id="date" name="date" [(ngModel)]="filters.dateFrom">
+    </div>
+
+    <div class="filter-group">
+        <label for="date">Datum do:</label>
+        <input type="date" id="date" name="date" [(ngModel)]="filters.dateTo">
+      </div>
+
+  
+    <div class="filter-group">
+      <label for="transport">Prevoz:</label>
+      <input type="text" id="transport" name="transport" [(ngModel)]="filters.transport">
+    </div>
+  
+    <button type="submit">Primeni Filtere</button>
+  </form>
+
+
+  <div class="filtered-aranzmani" *ngIf="filterIndicator">
+    <h2>Prikazani Aranžmani</h2>
+    <div class="card-container">
+      <div class="card"
+           *ngFor="let aranzman of filteredAranzmani"
+           [ngStyle]="{border: '1px solid blue'}">
+        <div class="image">
+          <img src="{{ aranzman.picture }}" 
+               alt="Slika"
+               width="90%"
+               height="90%"
+               class="card-image">
+        </div>
+        <h1>{{ aranzman.destinacija }}</h1>
+        <p>{{ aranzman.cena }} euro</p>
+        <p>Datum: {{ aranzman.datum }}</p>
+        <p>Prevoz: {{ aranzman.prevoz }}</p>
+        <p>
+          <span>Slobodno mesta: {{ aranzman.br_mesta }} </span>
+          <button [ngClass]="{'classButtonClick' : buttonClick}"
+                  (click)="onAddToCart(aranzman)">
+            Rezervisi
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+<div *ngIf="letoviIndicator">
+<table >
+  <thead>
+    <tr>
+      <th>ICAO24</th>
+      <th>Callsign</th>
+      <th>Origin Country</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Baro Altitude</th>
+      <th>On Ground</th>
+      <th>Velocity</th>
+      <th>True Track</th>
+      <th>Vertical Rate</th>
+      <th>Geo Altitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of filteredFlights">
+      <td>{{ flight.icao24 }}</td>
+      <td>{{ flight.callsign }}</td>
+      <td>{{ flight.originCountry }}</td>
+      <td>{{ flight.latitude }}</td>
+      <td>{{ flight.longitude }}</td>
+      <td>{{ flight.baroAltitude }}</td>
+      <td>{{ flight.onGround }}</td>
+      <td>{{ flight.velocity }}</td>
+      <td>{{ flight.trueTrack }}</td>
+      <td>{{ flight.verticalRate }}</td>
+      <td>{{ flight.geoAltitude }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+-->
+

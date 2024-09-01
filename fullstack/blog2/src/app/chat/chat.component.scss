@@ -1,0 +1,220 @@
+// Globalne boje i fontovi
+$primary-color: #99cbf2;
+$secondary-color: #f1f1f1;
+$text-color: #333;
+$border-color: #ddd;
+$font-family: 'Arial', sans-serif;
+
+
+
+.sect{
+    background: url('../../assets/images/back3jpg.jpg') no-repeat center center fixed;
+    background-size: cover; // Podesite sliku da pokriva ceo ekran
+    background-color: rgb(54, 106, 134);
+    backface-visibility: hidden;
+}
+
+// SCSS kod za chat-container
+.chat-container {
+    // Postavite dimenzije i poziciju kontejnera
+    width: 80%; // Možete prilagoditi širinu po potrebi
+    max-width: 600px; // Maksimalna širina za kontejner
+    margin: 0 auto; // Centriranje horizontalno
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3); // Bele boje sa malo providnosti za bolju čitljivost
+    border-radius: 8px; // Zaobljeni uglovi
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Lagana senka
+  
+    // Pozadina sa slikom
+    position: relative;
+    z-index: 1;
+    
+    // Stilizujte naslov
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+      text-align: center;
+      color:black;
+    }
+  
+    // Stilizujte formu
+    .chat-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  
+      textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: none;
+        font-size: 16px;
+      }
+  
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #516b87;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    // Stilizujte chat poruke
+    .chat-messages {
+      margin-top: 20px;
+      background-color: white;
+      
+      h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 16px;
+        word-wrap: break-word; // Da se tekst ne prelazi izvan granica
+      }
+    }
+  }
+  
+  // Pozadina celokupnog ekrana
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background: url('../../assets/images/chat_background.jpg') no-repeat center center fixed;
+    background-size: cover; // Podesite sliku da pokriva ceo ekran
+  }
+
+  // General styles for the component
+:host {
+  display: block;
+  padding: 20px;
+  //background-color: #f9f9f9; // svetlija pozadina za ceo container
+  border-radius: 8px; // zaobljeni ivici
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // blagi senka za bolji kontrast
+}
+
+// Style for individual items
+div *ngFor {
+  margin-bottom: 20px;
+ background-color: #f9f9f9;
+}
+
+
+
+// Style for pagination controls
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color:#ffffff; // svetla pozadina za paginacione kontrole
+  border-radius: 8px; // zaobljeni ivici
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // blagi senka za bolji kontrast
+  
+  // Style for pagination buttons
+  button {
+    background-color: #007bff; // plava boja za dugmad
+    color: #ffffff; // bela boja za tekst dugmadi
+    border: none;
+    border-radius: 4px; // zaobljeni ivici dugmadi
+    padding: 10px 20px; // unutrašnji razmak dugmadi
+    margin: 0 5px; // razmak između dugmadi
+    cursor: pointer;
+    font-size: 14px; // veličina fonta
+
+    &:disabled {
+      background-color: #d6d6d6; // svetlija siva boja za onemogućena dugmad
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      background-color: #0056b3; // tamnija plava boja za hover efekat
+    }
+  }
+
+  // Style for page number display
+  span {
+    font-size: 16px; // veličina fonta za prikaz stranica
+    color: #333; // tamno siva boja za tekst
+    margin: 0 10px;
+  }
+}
+
+// Container for the cards
+.aranzman-container {
+  display: flex;
+  flex-wrap: wrap; // Allows cards to wrap to the next line if they exceed the container width
+  gap: 20px; // Space between cards
+  justify-content: center; // Center-align cards horizontally
+  padding: 10px;
+}
+
+// Card style
+.card {
+  display: flex;
+  flex-direction: column; // Stack elements inside the card vertically
+  align-items: center; // Center-align content inside the card
+  border: 1px solid blue;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 300px; // Set a fixed width for the card
+  padding: 10px;
+  box-sizing: border-box;
+  width: 200px; // Reduced width for smaller cards
+  padding: 8px; // Reduced padding for smaller cards
+}
+
+// Image style
+.image {
+  width: 100%;
+  height: auto; // Maintain aspect ratio of the image
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  width: 100%;
+  height: 100px; // Reduced height for smaller images
+}
+
+
+.plain-container{
+  //background-color: rgba(255, 255, 255, 0.3);
+  background-color: #ffffff; /* Bela pozadina */
+  border: 1px solid #ddd;    /* Sivi okvir oko kontejnera */
+  border-radius: 8px;        /* Zaobljeni uglovi */
+  padding: 20px;             /* Unutrašnja margina */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Nježna senka */
+  margin: 20px;              /* Spoljašnja margina */
+}
+
+.exportbutton {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.exportbutton:hover {
+  background-color: #0056b3;
+}

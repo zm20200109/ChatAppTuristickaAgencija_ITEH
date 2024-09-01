@@ -1,0 +1,93 @@
+
+<div class="back">
+
+<div class="container1">
+    <div class="message">
+      <img src="../../assets/images/user.png" alt="User Icon">
+      <div>
+        <p>Welcome, <span style="font-weight: bold;">{{ userData.name }}</span>!</p>
+      </div>
+    </div>
+    <p style="font-weight: bold; font-size: 14px; margin-top: 10px;"><b>Let's travel with us.</b></p>
+    <button (click)="logout()">logout</button>
+  </div>
+
+  <!--OVDE CES DA NAPRAVIS TABELU SA ARANZMANIMA KOJI SU REZERVISANI-->
+  <div class="container">
+    <table>
+        <thead>
+            <tr>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+            <th></th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+            <td><span>{{ user.name }}</span></td>
+            <td><span>{{ user.email }}</span></td>
+            <td><span>{{ user.password }}</span></td>
+            <td><span ><button routerLink="/users/{{ user.id }}/edit">izmeni</button></span></td>
+            <td><span><button (click)="deleteUser(user)">izbrisi</button></span></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+  <!--sledi kontejener za aranzmane, njihovu izmenu, dodavanje i brisanje-->
+
+  
+  <div class="container">
+    <table>
+      <thead>
+          <tr>
+          <th>DESTINACIJA</th>
+          <th>CENA</th>
+          <th>BROJ MESTA</th>
+          <th>DATUM</th>
+          <th>PREVOZ</th>
+          <th>SLIKA</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let a of aranzmani">
+          <td><span>{{ a.destinacija }}</span></td>
+          <td><span>{{ a.cena }}</span></td>
+          <td><span>{{ a.br_mesta }}</span></td>
+          <td><span>{{ a.datum }}</span></td>
+          <td><span>{{ a.prevoz }}</span></td>
+          <td><span>{{ a.picture }}</span></td>
+
+
+          <td><span ><button>izmeni</button></span></td>
+          <td><span><button>izbrisi</button></span></td>
+          <td><span><button>dodaj</button></span></td>
+
+          </tr>
+      </tbody>
+  </table>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>

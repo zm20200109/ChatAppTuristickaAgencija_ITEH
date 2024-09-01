@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.back{
+  background: url('../../assets/images/back_3.jpg') no-repeat center center fixed;
+  background-size: cover; // Podesite sliku da pokrije ceo kontejner
+}
+
+
+.card-container {
+    display: flex;
+    justify-content: center; /* Align cards to the center horizontally */
+    gap: 20px; /* Space between each card */
+    padding: 20px; /* Padding around the container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+
+
+// Stilizujte card-container, pagination-controls, filter form, itd.
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  background: white; // Pozadina kartica
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px;
+  padding: 10px;
+  width: 300px; // Širina kartica
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Siva senka
+}
+
+.card-image {
+  border-radius: 5px;
+}
+
+.pagination-controls {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-group {
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: blue; // Pozadina dugmadi
+  color: white; // Boja teksta
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: grey; // Pozadina za neaktivna dugmad
+  cursor: not-allowed;
+}
+
+.filtered-aranzmani {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+
+.card {
+    width: 400px; /* Set the width of each card */
+    max-width: calc(100vw - 40px); /* Maximum width based on viewport width */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 30px;
+    background: linear-gradient(120deg, #ffffff, #e6e6e6);
+    box-shadow: 10px 10px 20px #9c9c9c, -10px -10px 20px #ffffff;
+    font-family: 'Roboto', 'sans-serif';
+    overflow: hidden; /* Clip content that goes beyond border-radius */
+}
+
+.image {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio (divide 9 by 16 = 0.5625) */
+    overflow: hidden;
+}
+
+.image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 30px; /* Rounded top-left corner */
+    border-top-right-radius: 30px; /* Rounded top-right corner */
+}
+
+.price {
+    color: black;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    margin-top: 12px;
+    color: white;
+    background-color: rgb(93, 181, 232);
+    
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+
+.classButtonClick {
+    border: 3 px solid red !important;
+}
+
+
+// Generalne stilove za paginaciju
+.pagination-controls {
+    display: flex;
+    justify-content: center; // Centriranje kontrole paginacije
+    align-items: center;
+    margin: 20px 0; // Razmak od gornjeg i donjeg sadržaja
+    padding: 10px;
+    background-color: #ffffff1a; // Pozadina kontrole paginacije
+    border-radius: 8px; // Zaobljeni uglovi
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Blaga senka
+  }
+  
+  .pagination-controls button {
+    background-color: #0a2849; // Pozadina dugmadi
+    border: none; // Bez ivica
+    color: #fff; // Boja teksta
+    padding: 10px 15px; // Razmak unutar dugmadi
+    margin: 0 5px; // Razmak između dugmadi
+    border-radius: 4px; // Zaobljeni uglovi
+    cursor: pointer; // Pokazivač kursora pri prelasku na dugme
+    transition: background-color 0.3s ease; // Efekat prelaska boje pozadine
+    font-weight: bold; // Boldovan tekst
+  }
+  
+  .pagination-controls button:hover {
+    background-color: #3484d8; // Tamnija nijansa plave prilikom prelaska miša
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: rgba(88, 83, 83, 0.5); // Svetlija boja za onemogućena dugmad
+    cursor: not-allowed; // Kursori za onemogućena dugmad
+  }
+  
+  .pagination-controls span {
+    margin: 0 10px; // Razmak sa leve i desne strane
+    font-size: 16px; // Veličina fonta
+    font-weight: bold; // Boldovan tekst
+  }
+  
+
+
+
+
+  /* Stilizovanje filter forme */
+form {
+  background-color: #f0f8ff; /* svetloplava pozadina */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+
+  .filter-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #003366; /* tamno plava boja teksta */
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #b0c4de; /* svetla plava boja ivica */
+      box-sizing: border-box;
+      font-size: 16px;
+      color: #003366; /* tamno plava boja teksta */
+      
+      &:focus {
+        border-color: #007bff; /* plava boja ivica pri fokusu */
+        outline: none;
+      }
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #007bff; /* plava boja pozadine dugmeta */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3; /* tamnija plava boja pozadine pri prelasku miša */
+    }
+  }
+}

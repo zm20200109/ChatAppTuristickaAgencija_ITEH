@@ -1,0 +1,56 @@
+<body class="sect"> 
+<div class="chat-container">
+    <h2>Travel Assistant Chat</h2>
+    <form class="chat-form" (ngSubmit)="sendQuery()">
+      <textarea [(ngModel)]="query" name="query" required></textarea>
+      <button type="submit">Postavite pitanje</button>
+    </form>
+    <div *ngIf="response!==undefined" class="chat-messages">
+      <h3></h3>
+      <p ></p>
+    </div>
+  
+</div>
+
+<div *ngIf="planIndicator" class="plain-container">
+  <div *ngFor="let item of paginatedPlan">
+    <p><strong>Day:{{item.day}}</strong></p>
+    <p><strong>Time:</strong> {{ item.time }}</p>
+    <p><strong>Activity:</strong> {{ item.activity }}</p>
+    <p><strong>Location:</strong> {{ item.location }}</p>
+    <p><strong>Price:</strong> {{ item.price }}</p>
+    <hr>
+  </div>
+  <div class="pagination-controls">
+    <button (click)="prevPage()" [disabled]="currentPage === 0">Prethodna stranica</button>
+    <span>Stranica {{ currentPage + 1 }} od {{ getTotalPages()  }}</span>
+    <button (click)="nextPage()" [disabled]="(currentPage + 1) * pageSize >= travelPlan.length">Sledeća stranica</button>
+  </div>
+  <button (click)="exportToJson()" class="exportbutton">Exportuj plan</button>
+</div>
+<div *ngIf="arangementIndicator" class="aranzman-container">
+  <div  class="card" 
+  [ngStyle]="{border: '1px solid blue'}"
+   *ngFor="let aranzman of aranzmani">
+      <div class="image">
+      <img src=" {{ aranzman.picture  }} " 
+      alt="Slika"
+      width="90%"
+      height="90%"
+      class="card-image"
+      >
+      </div>
+      <h2>{{ aranzman.destinacija }}</h2>
+      <p>{{ aranzman.cena }} euro</p>
+   <!--   <p>Broj mesta: {{ aranzman.br_mesta }}</p> -->
+      <p>Datum: {{ aranzman.datum }}</p>
+      <p>Prevoz: {{  aranzman.prevoz }}</p>
+      <p>
+      <span>Slobodno mesta: {{ aranzman.br_mesta }} </span>
+  
+      </p>
+  </div>
+  </div>
+
+
+</body>

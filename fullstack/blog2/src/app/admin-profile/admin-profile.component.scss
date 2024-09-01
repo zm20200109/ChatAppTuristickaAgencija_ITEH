@@ -1,0 +1,132 @@
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+  }
+  
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    border: 2px solid #2196f3;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .message p {
+    margin: 10px;
+  }
+  
+  .message img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  
+  .back {
+
+
+    background-image: url(../../assets/images/admin_bck.jpg);
+   // background-size: cover; /* Cover the entire viewport */
+    
+    //background-position: center; /* Center the background image */
+    height: 100vh; /* Ensure the background covers the entire viewport height */
+   // background-size: cover;
+   // background-position: center;
+   // background-repeat: no-repeat;
+    opacity: 0.9;
+    padding: 20px;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background-color: rgb(126, 191, 226);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  button:hover,
+  button:focus {
+    background-color: #00bcd4;
+  }
+  
+  button:active {
+    background-color: #0097a7;
+  }
+
+  //***************
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex;
+    padding-top: 50px;
+  }
+  
+  table {
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(120deg, rgb(217, 241, 254), rgb(217, 241, 254));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  thead {
+    background-color: rgb(217, 241, 254);
+    color: white;
+    font-weight: bold;
+  }
+  
+  thead th {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  td {
+    padding: 15px;
+    font-weight: bold;
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background-color: rgb(126, 191, 226);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  button:hover,
+  button:focus {
+    background-color: #00bcd4;
+  }
+  
+  button:active {
+    background-color: #0097a7;
+  }
+  

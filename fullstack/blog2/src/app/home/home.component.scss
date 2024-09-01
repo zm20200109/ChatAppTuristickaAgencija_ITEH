@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.bg-color {
+    background-image: url('../../assets/images/bg1.jpg');
+    padding: 60px 0;
+    font-family: 'Roboto','sans-serif';
+}
+
+.containers{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.title {
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+
+.title p{
+    color: black;
+    font-style: italic;
+    font-weight: 700;
+    margin: 0;
+}
+
+.title h1{
+    font-size: 44px;
+    color: white;
+    font-weight: 900;
+   // text-transform: uppercase;
+}
+
+.title h1 span{
+//color:burlywood;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px; // Postavite maksimalnu širinu ako želite
+    margin: 0 auto;
+  
+    h1 {
+      text-align: center;
+      color: #d8e2e9; /* Boja slova za vreme */
+    }
+  
+    .selector {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      label {
+        margin-bottom: 10px;
+      }
+  
+      select {
+        padding: 8px;
+        font-size: 16px;
+   
+      }
+    }
+  
+    .temperature-container {
+      display: flex;
+      flex-wrap: wrap; // Omogućava prelazak na novi red
+      gap: 10px; // Razmak između elemenata
+    }
+  
+    .temperature-item {
+      flex: 1 1 calc(33.333% - 10px); // Tri kolone, minus razmak
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px; // Širina svakog elementa, prilagodite po potrebi
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  
+      .time {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+  
+      .temperature {
+        font-size: 1.2em;
+      }
+    }
+  }
+  

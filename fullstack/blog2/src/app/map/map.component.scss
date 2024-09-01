@@ -1,0 +1,13 @@
+
+    #map {
+        height: 60vh; /* Visina mape kao procenat visine vidljivog dela prozora */
+        width: 90vw; /* Širina mape kao procenat širine vidljivog dela prozora */
+      
+        border: 3px solid #007bff; /* Plavi okvir, možete promeniti boju prema potrebi */
+        border-radius: 8px; /* Zaobljeni uglovi okvira */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 20px auto; /* Automatsko centriranje i odstojanje od ivica ekrana */
+      }
+      
+  
+  
